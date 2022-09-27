@@ -46,6 +46,12 @@ public class Card implements Comparable<Card> {
 
   @Override
   public int compareTo(Card other) {
-    return 0;  //TODO: 2022-09-16 Replace with comparision based on suit and rank.
+    int comparison = this.suit.compareTo(other.suit);
+
+    if (comparison == 0) {
+      comparison = rank.compareTo(other.rank);
+    }
+    return comparison;
+    //TODO: 2022-09-16 Replace with comparision based on suit and rank.
   }
 }
